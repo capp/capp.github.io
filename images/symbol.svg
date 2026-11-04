@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Digest Player">
+  <!-- アプリのアイコンと同じ形（tool/app_icon/render_app_icon_test.dart）。リングは幅の80%、マークは52% -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0F4A52"/>
+      <stop offset="1" stop-color="#05222A"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="40" fill="url(#bg)"/>
+  <circle cx="50" cy="50" r="38.8" fill="none" stroke="#E2B44B" stroke-width="2.4"/>
+  <!-- 24×24 のマス目で描いたマークを、真ん中に52の大きさで置く（重心を合わせて少し右へ） -->
+  <g transform="translate(24 24) scale(2.1667) translate(0.22 0)">
+    <path d="M10.5 5 L21 12 L10.5 19 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+    <rect x="1.5" y="7.1" width="7" height="1.8" rx="0.9" fill="#E2B44B"/>
+    <rect x="3.5" y="11.1" width="5" height="1.8" rx="0.9" fill="#E2B44B"/>
+    <rect x="5.5" y="15.1" width="3" height="1.8" rx="0.9" fill="#E2B44B"/>
+  </g>
+</svg>
