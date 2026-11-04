@@ -1,0 +1,43 @@
+/* Digest Player のアイコンと同じ色：深い青緑の地に、ゴールドの強調 */
+:root {
+  --ink: #021317;
+  --teal: #0f4a52;
+  --panel: #05222a;
+  --line: #16414a;
+  --text: #e8f0f0;
+  --muted: #8fa9ad;
+  --gold: #e2b44b;
+  --font: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.8;
+  padding-block: 40px 64px;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 720px; margin: 0 auto; display: grid; gap: 28px; }
+header.site { display: flex; align-items: center; gap: 14px; }
+header.site a { color: var(--text); text-decoration: none; font-weight: 700; letter-spacing: .02em; }
+nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; }
+nav a { color: var(--muted); }
+h1 { font-size: clamp(26px, 5vw, 34px); line-height: 1.35; margin: 0; text-wrap: balance; }
+h2 { font-size: 20px; margin: 8px 0 0; color: var(--gold); }
+h3 { font-size: 16px; margin: 4px 0 0; }
+p, ul, dl { margin: 0; }
+ul { padding-left: 1.2em; display: grid; gap: 6px; }
+a { color: var(--gold); }
+.lead { color: var(--muted); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 10px; }
+.mark { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--gold); background: linear-gradient(var(--teal), #05222a); flex: none; display: grid; place-items: center; }
+.mark::after { content: ""; border-left: 14px solid #fff; border-top: 9px solid transparent; border-bottom: 9px solid transparent; margin-left: 4px; }
+dt { font-weight: 700; margin-top: 10px; }
+dd { margin: 2px 0 0; color: var(--muted); }
+.lang { font-size: 14px; color: var(--muted); }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
