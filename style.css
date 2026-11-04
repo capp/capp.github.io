@@ -40,3 +40,5 @@ dt { font-weight: 700; margin-top: 10px; }
 dd { margin: 2px 0 0; color: var(--muted); }
 .lang { font-size: 14px; color: var(--muted); }
 footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
+.switch { margin-left: auto; font-size: 13px; color: var(--muted); }
+.switch strong { color: var(--text); font-weight: 700; }
