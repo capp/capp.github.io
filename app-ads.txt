@@ -1,3 +1,1 @@
-# Capplicorn の広告の売り手の一覧（app-ads.txt）
-# AdMob にアプリを登録したら、AdMob の画面に出る1行をここに書く
-# 例: google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+google.com, pub-2526267497946443, DIRECT, f08c47fec0942fa0
