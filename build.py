@@ -3,19 +3,20 @@
 import os
 
 # CSS や画像を変えたら上げる（ブラウザに残った古いファイルを読まないように）
-VERSION = 5
+VERSION = 6
 
 PAGES = {
     # 名前: (置き場所, 日本語の題名, 英語の題名)
     'home': ('', 'Capplicorn', 'Capplicorn'),
     'app': ('digest-player/', 'Digest Player', 'Digest Player'),
+    'plaintext': ('plaintext-plus/', 'PlainText+', 'PlainText+'),
     'support': ('support/', 'Digest Player サポート', 'Digest Player Support'),
     'privacy': ('privacy/', 'Digest Player プライバシーポリシー', 'Digest Player Privacy Policy'),
 }
 
 NAV = {
-    'ja': [('app', 'Digest Player'), ('support', 'サポート'), ('privacy', 'プライバシーポリシー')],
-    'en': [('app', 'Digest Player'), ('support', 'Support'), ('privacy', 'Privacy Policy')],
+    'ja': [('app', 'Digest Player'), ('plaintext', 'PlainText+'), ('support', 'サポート'), ('privacy', 'プライバシーポリシー')],
+    'en': [('app', 'Digest Player'), ('plaintext', 'PlainText+'), ('support', 'Support'), ('privacy', 'Privacy Policy')],
 }
 
 FOOTER = {

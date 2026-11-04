@@ -37,7 +37,8 @@ a { color: var(--gold); }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 10px; }
 .mark { width: 44px; height: 44px; flex: none; display: block; border-radius: 50%; }
 .app-title { display: flex; align-items: center; gap: 14px; }
-.app-title img { flex: none; display: block; }
+.app-title img { flex: none; display: block; border-radius: 10px; }
+.shot { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
 dt { font-weight: 700; margin-top: 10px; }
 dd { margin: 2px 0 0; color: var(--muted); }
 .lang { font-size: 14px; color: var(--muted); }
