@@ -3,7 +3,7 @@
 import os
 
 # CSS や画像を変えたら上げる（ブラウザに残った古いファイルを読まないように）
-VERSION = 3
+VERSION = 4
 
 PAGES = {
     # 名前: (置き場所, 日本語の題名, 英語の題名)
@@ -42,7 +42,8 @@ def page(lang, name):
     )
     # 本文は _content/<言語>/<名前>.html に書く（ヘッダー・ナビ・フッターは、ここで付ける）
     with open(f'_content/{lang}/{name}.html', encoding='utf-8') as f:
-        body = f.read()
+        # 本文の中の {root} は、サイトの一番上へ戻る相対パス、{version} は VERSION にする
+        body = f.read().replace('{root}', root).replace('{version}', str(VERSION))
     return f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -58,7 +59,7 @@ def page(lang, name):
 </head>
 <body>
 <main>
-<header class="site"><img class="mark" src="{root}images/symbol.svg?v={VERSION}" alt="" width="44" height="44"><a href="{here}">Capplicorn</a><span class="switch">{switch}</span></header>
+<header class="site"><img class="mark" src="{root}images/capplicorn.png?v={VERSION}" alt="" width="44" height="44"><a href="{here}">Capplicorn</a><span class="switch">{switch}</span></header>
 <nav>{nav}</nav>
 {body}<footer>© 2026 Capplicorn ・ {FOOTER[lang]}：<a href="mailto:capp@capplicorn.com">capp@capplicorn.com</a></footer>
 </main>
