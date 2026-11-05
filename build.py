@@ -10,13 +10,17 @@ PAGES = {
     'home': ('', 'Capplicorn', 'Capplicorn'),
     'app': ('digest-player/', 'Digest Player', 'Digest Player'),
     'plaintext': ('plaintext-plus/', 'PlainText+', 'PlainText+'),
-    'support': ('support/', 'Digest Player サポート', 'Digest Player Support'),
-    'privacy': ('privacy/', 'Digest Player プライバシーポリシー', 'Digest Player Privacy Policy'),
+    # サポートとプライバシーポリシーは Digest Player のものなので、そのページの下に置く
+    'support': ('digest-player/support/', 'Digest Player サポート', 'Digest Player Support'),
+    'privacy': ('digest-player/privacy/', 'Digest Player プライバシーポリシー', 'Digest Player Privacy Policy'),
 }
 
+# 前の置き場所（/support/・/privacy/）。開いた人を新しい置き場所へ移す
+MOVED = {'support/': 'support', 'privacy/': 'privacy'}
+
 NAV = {
-    'ja': [('app', 'Digest Player'), ('plaintext', 'PlainText+'), ('support', 'サポート'), ('privacy', 'プライバシーポリシー')],
-    'en': [('app', 'Digest Player'), ('plaintext', 'PlainText+'), ('support', 'Support'), ('privacy', 'Privacy Policy')],
+    'ja': [('app', 'Digest Player'), ('plaintext', 'PlainText+')],
+    'en': [('app', 'Digest Player'), ('plaintext', 'PlainText+')],
 }
 
 FOOTER = {
@@ -75,4 +79,30 @@ for lang in ('ja', 'en'):
         os.makedirs(os.path.dirname(out) or '.', exist_ok=True)
         with open(out, 'w', encoding='utf-8') as f:
             f.write(page(lang, name))
+        print('wrote', out)
+
+
+def moved(lang, old, name):
+    """前の置き場所に残す、新しい置き場所へすぐ移るだけのページ"""
+    prefix = 'en/' if lang == 'en' else ''
+    url = f'https://capplicorn.com/{prefix}{PAGES[name][0]}'
+    return f'''<!doctype html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8">
+<title>{PAGES[name][2 if lang == 'en' else 1]}</title>
+<link rel="canonical" href="{url}">
+<meta http-equiv="refresh" content="0; url={url}">
+</head>
+<body><p><a href="{url}">{url}</a></p></body>
+</html>
+'''
+
+
+for lang in ('ja', 'en'):
+    for old, name in MOVED.items():
+        out = ('en/' if lang == 'en' else '') + old + 'index.html'
+        os.makedirs(os.path.dirname(out), exist_ok=True)
+        with open(out, 'w', encoding='utf-8') as f:
+            f.write(moved(lang, old, name))
         print('wrote', out)
