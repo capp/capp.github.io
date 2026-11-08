@@ -7,7 +7,7 @@ VERSION = 7
 
 PAGES = {
     # 名前: (置き場所, 日本語の題名, 英語の題名)
-    'home': ('', 'Capplicorn', 'Capplicorn'),
+    'home': ('', 'Capplicorn Works', 'Capplicorn Works'),
     'app': ('digest-player/', 'Digest Player', 'Digest Player'),
     'plaintext': ('plaintext-plus/', 'PlainText+', 'PlainText+'),
     # サポートとプライバシーポリシーは Digest Player のものなので、そのページの下に置く
