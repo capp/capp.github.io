@@ -3,7 +3,7 @@
 import os
 
 # CSS や画像を変えたら上げる（ブラウザに残った古いファイルを読まないように）
-VERSION = 8
+VERSION = 9
 
 PAGES = {
     # 名前: (置き場所, 日本語の題名, 英語の題名)
@@ -64,7 +64,7 @@ def page(lang, name):
 </head>
 <body>
 <main>
-<header class="site"><a class="home" href="{here}"><img class="mark" src="{root}images/capplicorn.png?v={VERSION}" alt="" width="44" height="44">C<span class="appli">appli</span>corn Works</a><span class="switch">{switch}</span></header>
+<header class="site"><a class="home" href="{here}"><img class="mark" src="{root}images/capplicorn.png?v={VERSION}" alt="" width="44" height="44"><span>C<span class="appli">appli</span>corn Works</span></a><span class="switch">{switch}</span></header>
 <nav>{nav}</nav>
 {body}<footer>© 2026 Capplicorn ・ {FOOTER[lang]}：<a href="mailto:capp@capplicorn.com">capp@capplicorn.com</a></footer>
 </main>
