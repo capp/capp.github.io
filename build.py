@@ -66,7 +66,7 @@ def page(lang, name):
 <main>
 <header class="site"><a class="home" href="{here}"><img class="mark" src="{root}images/capplicorn.png?v={VERSION}" alt="" width="44" height="44"><span>C<span class="appli">appli</span>corn Works</span></a><span class="switch">{switch}</span></header>
 <nav>{nav}</nav>
-{body}<footer>© 2026 Capplicorn ・ {FOOTER[lang]}：<a href="mailto:capp@capplicorn.com">capp@capplicorn.com</a></footer>
+{body}<footer>© 2026 Capplicorn ・ {FOOTER[lang]}：<a href="mailto:capp@capplicorn.com">capp@capplicorn.com</a> ・ X：<a href="https://x.com/capplicorn" rel="me">@capplicorn</a></footer>
 </main>
 </body>
 </html>
